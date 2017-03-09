@@ -32,12 +32,12 @@ public class MainActivity extends AppCompatActivity {
         int height = srcBitmap.getHeight();
         int[] pixelArray = new int[width * height];
         srcBitmap.getPixels(pixelArray, 0, width, 0, 0, width, height);
-        pixelArray = nCorrode(pixelArray, width, height);
+        pixelArray = nErode(pixelArray, width, height);
 
         /*显示处理后的图像*/
         Bitmap destBitmap = Bitmap.createBitmap(pixelArray, width, height, Bitmap.Config.ARGB_8888);
         destImage.setImageBitmap(destBitmap);
     }
 
-    private native int[] nCorrode(int[] pixelArray, int width, int height);
+    private native int[] nErode(int[] pixelArray, int width, int height);
 }

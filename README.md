@@ -21,7 +21,7 @@ VS 工程搭建参考【在 VS 上配置 OpenCV 工程】。
 
 VS 工程目录结构：
 
-![](https://github.com/weichao66666/OpenCV_Corrode/raw/master/README.md-images/01.png)
+![](https://github.com/weichao66666/OpenCV_Erode/raw/master/README.md-images/01.png)
 
 ##**AS 工程**
 
@@ -33,7 +33,7 @@ AS 工程搭建参考：
 
 AS 工程目录结构：
 
-![](https://github.com/weichao66666/OpenCV_Corrode/raw/master/README.md-images/02.png)
+![](https://github.com/weichao66666/OpenCV_Erode/raw/master/README.md-images/02.png)
 
 ---
 
@@ -63,17 +63,17 @@ AS 工程目录结构：
 
 ###**添加 test.png 到 main.cpp 所在目录**
 
-![](https://github.com/weichao66666/OpenCV_Corrode/raw/master/README.md-images/test.png)
+![](https://github.com/weichao66666/OpenCV_Erode/raw/master/README.md-images/test.png)
 
 ###**运行结果**
 
-![](https://github.com/weichao66666/OpenCV_Corrode/raw/master/README.md-images/03.png)
+![](https://github.com/weichao66666/OpenCV_Erode/raw/master/README.md-images/03.png)
 
 ##**AS 工程**
 
 所有修改内容：
 
-![](https://github.com/weichao66666/OpenCV_Corrode/raw/master/README.md-images/05.png)
+![](https://github.com/weichao66666/OpenCV_Erode/raw/master/README.md-images/05.png)
 
 ###**修改 activity_main.xml**
 
@@ -98,7 +98,7 @@ AS 工程目录结构：
 
 ###**添加 test.png**
 
-![](https://github.com/weichao66666/OpenCV_Corrode/raw/master/README.md-images/test.png)
+![](https://github.com/weichao66666/OpenCV_Erode/raw/master/README.md-images/test.png)
 
 ###**修改 opencv.cpp**
 
@@ -110,7 +110,7 @@ AS 工程目录结构：
     
     extern "C"
     JNIEXPORT jintArray JNICALL
-    Java_io_weichao_opencv_MainActivity_nCorrode(JNIEnv *env, jobject obj /* this */,
+    Java_io_weichao_opencv_MainActivity_nErode(JNIEnv *env, jobject obj /* this */,
                                                  jintArray pixelArray,
                                                  int width, int height) {
         jint *pixelPoint;
@@ -166,19 +166,19 @@ AS 工程目录结构：
             int height = srcBitmap.getHeight();
             int[] pixelArray = new int[width * height];
             srcBitmap.getPixels(pixelArray, 0, width, 0, 0, width, height);
-            pixelArray = nCorrode(pixelArray, width, height);
+            pixelArray = nErode(pixelArray, width, height);
     
             /*显示处理后的图像*/
             Bitmap destBitmap = Bitmap.createBitmap(pixelArray, width, height, Bitmap.Config.ARGB_8888);
             destImage.setImageBitmap(destBitmap);
         }
     
-        private native int[] nCorrode(int[] pixelArray, int width, int height);
+        private native int[] nErode(int[] pixelArray, int width, int height);
     }
 
 ###**运行结果**
 
-![](https://github.com/weichao66666/OpenCV_Corrode/raw/master/README.md-images/04.png)
+![](https://github.com/weichao66666/OpenCV_Erode/raw/master/README.md-images/04.png)
 
 ---
 

@@ -6,7 +6,7 @@ using namespace cv;
 
 extern "C"
 JNIEXPORT jintArray JNICALL
-Java_io_weichao_opencv_MainActivity_nCorrode(JNIEnv *env, jobject obj /* this */,
+Java_io_weichao_opencv_MainActivity_nErode(JNIEnv *env, jobject obj /* this */,
                                              jintArray pixelArray,
                                              int width, int height) {
     jint *pixelPoint;
