@@ -61,6 +61,10 @@ AS 工程目录结构：
     	return 0;
     }
 
+###**添加 test.png 到 main.cpp 所在目录**
+
+![](https://github.com/weichao66666/OpenCV_Corrode/raw/master/README.md-images/test.png)
+
 ###**运行结果**
 
 ![](https://github.com/weichao66666/OpenCV_Corrode/raw/master/README.md-images/03.png)
